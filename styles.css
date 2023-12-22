@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --cell-size: 100px;
+}
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+/* bord */
+.bord {
+  width: 50vh;
+  height: 50vh;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+  background-color: aqua;
+}
+
+/* cell */
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+/* removing borders */
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+  border-bottom: none;
+}
+
+.cell:nth-child(3n + 3) {
+  border-right: none;
+}
+
+/*  cellElements X,O started*/
+.cell.x,
+.cell.o {
+  cursor: not-allowed;
+}
+/* x drawing */
+.cell.x::before,
+.cell.x::after {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 90px;
+  background-color: black;
+}
+
+.cell.x::before {
+  transform: rotate(-40deg);
+}
+
+.cell.x::after {
+  transform: rotate(40deg);
+}
+/* O drawing */
+.cell.o::before,
+.cell.o::before {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+}
+.cell.o::before {
+  width: 60px;
+  height: 60px;
+  border: solid 10px black;
+}
+.cell.o::after {
+  width: 60px;
+  height: 60px;
+  border: solid 10px black;
+}
+
+h3 {
+  font-size: 3vh;
+  color: red;
+}
+
+/* winnig-msg */
+.winning-msg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 9);
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  font-size: 5rem;
+  flex-direction: column;
+}
+.restartbtn {
+  font-size: 3rem;
+  background-color: white;
+  border: 1px solid black;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+.restartbtn:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  padding: 0.25rem 0.5rem;
+}
+.winning-msg.show {
+  display: flex;
+}
