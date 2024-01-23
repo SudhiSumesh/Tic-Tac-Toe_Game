@@ -1,7 +1,7 @@
  # Tic-Tac-Toe Game
   This is a Tic-Tac-Toe game built using HTML, CSS, and JavaScript. The game features a clean and intuitive user interface that allows players to easily make their moves and track their progress.
   
-  Play Game (Live Demo) :  https://sumeshsudhi.github.io/Tic-Tac-Toe_Game/
+  Play Game (Live Demo) : https://sudhisumesh.github.io/Tic-Tac-Toe_Game/
 # Technical Details
 The game was built using the following technologies:
 
